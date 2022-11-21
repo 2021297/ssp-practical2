@@ -1,4 +1,4 @@
 tasks:
-  - init: npm i -g http express fs xslt-processor
+  - init: npm i http express fs xslt-processor
   
  
