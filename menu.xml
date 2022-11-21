@@ -1,10 +1,9 @@
-menu.xml
-<?xml version="1.0" encoding="UFT-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <menu>
-    <category name="coffee">
+    <category name="Coffee">
         <item>
             <listing>Espresso</listing>
-            <price>3.00</price>
+            <price>3.10</price>
         </item>
         <item>
             <listing>Latte</listing>
@@ -15,21 +14,21 @@ menu.xml
             <price>3.20</price>
         </item>
     </category>
-    <category name= "Frappe">
+    <category name="Frappe">
         <item>
-            <listing>Salted Caramel Frappe</listing>
-            <price>3.50</price>
+            <listing>Salted Caramel Frappé</listing>
+            <price>4.50</price>
         </item>
         <item>
-            <listing>Pumkin Spiced Frappe</listing>
+            <listing>Pumpkin Spice Frappé</listing>
             <price>5.00</price>
         </item>
         <item decaf="true">
-            <listing>Mint Chocolate Frappe</listing>
+            <listing>Mint Chocolate Frappé</listing>
             <price>5.00</price>
         </item>
     </category>
-    <category name=Iced coffee>
+    <category name="Iced Coffee">
         <item>
             <listing>Iced Toasted Vanilla</listing>
             <price>4.00</price>
@@ -43,27 +42,27 @@ menu.xml
             <price>4.10</price>
         </item>
     </category>
-    <category name=Tea>
+    <category name="Tea">
         <item>
             <listing>Mint</listing>
             <price>2.50</price>
         </item>
         <item>
             <listing>Green</listing>
-            <price>3.00</price>
+            <price>2.70</price>
         </item>
         <item decaf="true">
             <listing>Breakfast</listing>
-            <price>2.75</price>
+            <price>2.50</price>
         </item>
     </category>
-    <category name=desert>
+    <category name="Deserts">
         <item>
             <listing>Chocolate Brownie</listing>
             <price>4.50</price>
         </item>
         <item>
-            <listing>Vanila Cheesecake</listing>
+            <listing>Vanila Cheescake</listing>
             <price>4.50</price>
         </item>
         <item>
@@ -72,4 +71,3 @@ menu.xml
         </item>
     </category>
 </menu>
-    

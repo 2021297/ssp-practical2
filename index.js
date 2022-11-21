@@ -1,14 +1,14 @@
-const http = require('http'), //HTTP server
-      express = require('express'), //handling HTTP requests & routing
-      fs = require('fs'), //File system funtinalities
-      xmlParse = require('xslt-processor').xmlParse, //XML handling
-      xsltProcess = require('xslt-processor').xsltProcess, //XSLT handling
-      router = express(), //Init our router
-      server = http.createServer(router); //Init our server
+const   http = require('http'), //HTTP server
+        express = require('express'), //Handling HTTP requests & routing
+        fs = require('fs'), //File system functionalities
+        xmlParse = require('xslt-processor').xmlParse, //XML handling
+        xsltProcess = require('xslt-processor').xsltProcess, //XSLT handling
+        router = express(), //Init our router
+        server = http.createServer(router); //Init our server
 
-      router.get('/', dunction(req, res){
+router.get('/', function(req, res) {
 
-    res.writeHead(200,{'content-Type' : 'text/html'});
+    res.writeHead(200, {'Content-Type' : 'text/html'});
 
     let xml = fs.readFileSync('menu.xml', 'utf8'),
         xsl = fs.readFileSync('menu.xsl', 'utf8');
@@ -21,8 +21,7 @@ const http = require('http'), //HTTP server
     res.end(html.toString());
 });
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", fuction(){
-
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
     const addr = server.address();
-    console.log("Server listening at", addr.address + ":" +addr.port)
+    console.log("Server listening at", addr.address + ":" + addr.port)
 });
