@@ -67,4 +67,4 @@ window.addEventListener("load", function () {
     document.querySelector("#showDecaf").addEventListener("click", function () {
         highlightDecaf('menuTable', this.checked);
     });
-}); 
+});
