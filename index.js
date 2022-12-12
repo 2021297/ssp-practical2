@@ -9,6 +9,24 @@ const   http = require('http'), //HTTP server
         server = http.createServer(router); //Init our server
         
         router.use(express.static(path.resolve(__dirname,'views'))); 
+        router.use(express.urlencoded({extended: true}));
+
+    function XMLtoJSON(filename, cb){
+        let filepath = path.normalize(path.join(__dirname,filename));
+        fs.readFile(filepath, 'utf-8', function(err, xmlStr){
+            if(err) throw(err);
+            xml2js.parseString(xmlStr, {}, cb);
+        });
+    };
+
+    function JSONtoXML(filename,obj, cb){
+        let filepath = path.normalize(path.join(__dirname, filename));
+        let builder = new xml2js.Builder();
+        let xml = builder.buildObject(obj);
+        fs.unlinkSync(filepath);
+        fs.writeFile(filepath, xml, cb);
+    };
+        router.use(express.json());
 
 router.get('/get/html', function(req, res) {
 
@@ -23,6 +41,24 @@ router.get('/get/html', function(req, res) {
     let html = xsltProcess(xml, xsl);
 
     res.end(html.toString());
+});
+
+router.post('/post/json', function(req, res){
+    function appendJSON(obj){
+        console.log(obj);
+        XMLtoJSON('menu.xml', function(err, result){
+            if(err)throw(err);
+            result.menu.category[obj.sec_n].item,push({'listing':obj.listing, 'price':obj.price});
+            console.log(JSON.stringify(result,null, " "));
+            JSONtoXML('menu.xml',result,function(err){
+                if(err)console.log(err);
+            });
+        });
+    };
+
+    appendJSON(req.body);
+
+    res.redirect('back');
 });
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {

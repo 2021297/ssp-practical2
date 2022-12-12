@@ -1,3 +1,2 @@
 tasks:
-  - init: npm i http path express fs xslt-processor xml2js
-    start: node index.js
+  - init: npm i http path express fs xslt-processor xml2js && node index.js
