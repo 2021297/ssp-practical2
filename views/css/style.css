@@ -1,24 +1,25 @@
 body {
-    margin-bottom:60px;
+    margin-bottom: 60px;
 }
-table{
+
+table {
     width:100%;
 }
-table, th, td{
-    width:100%;
+
+table, th, td {
     border-collapse: collapse;
     border: 1px solid #ced4da;
-    text-align: center;
     padding: 0.5rem;
-
 }
-td, th{
+
+td, th {
     text-align: left;
 }
-td:nth-child(1){
 
+td:nth-child(1), td:nth-child(3){
+    text-align: center;
 }
-th{
+
+th {
     font-weight: bold;
-    
 }
